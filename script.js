@@ -124,3 +124,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+const musica = document.getElementById("musica");
+
+if (musica) {
+  musica.addEventListener("loadedmetadata", function() {
+    musica.currentTime = 35;
+  });
+
+  musica.addEventListener("play", function() {
+    if (musica.currentTime < 35) {
+      musica.currentTime = 35;
+      musica.play();
+    }
+  });
+}
+
